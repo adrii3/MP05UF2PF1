@@ -24,6 +24,7 @@ public class HashTable {
 
         if(entries[hash] == null) {
             entries[hash] = hashEntry;
+            size++;
         }
         else {
             HashEntry temp = entries[hash];
@@ -65,6 +66,7 @@ public class HashTable {
                 if(temp.next != null) temp.next.prev = temp.prev;   //esborrem temp, per tant actualitzem l'anterior al següent
                 temp.prev.next = temp.next;                         //esborrem temp, per tant actualitzem el següent de l'anterior
             }
+            size--;
         }
     }
 
