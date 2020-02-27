@@ -50,12 +50,50 @@ class HashTableTest {
     @org.junit.jupiter.api.Test
     void put() {
         HashTable hashTable = new HashTable();
+
         hashTable.put("1","Adri");
         Assertions.assertEquals("Adri",hashTable.get("1"));
+
+        hashTable.put("2","Paquito");
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+        hashTable.put("2","Stiben");
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+        hashTable.put("-1","Mariano");
+        System.out.println(hashTable);
+        Assertions.assertEquals(null,hashTable.get("-1"));
+
+        hashTable.put("20","Paco");
+
+
+
     }
 
     @org.junit.jupiter.api.Test
     void get() {
+
+        HashTable hashTable = new HashTable();
+
+        hashTable.put("1","Adri");
+        Assertions.assertEquals("Adri",hashTable.get("1"));
+
+        hashTable.put("2","Paquito");
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+        hashTable.put("2","Stiben");
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+        hashTable.put("2","Mariano");
+        System.out.println(hashTable);
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+        hashTable.put("2","Mariano");
+        System.out.println(hashTable);
+        Assertions.assertEquals("Paquito",hashTable.get("2"));
+
+
+        Assertions.assertEquals(null,hashTable.get("-1"));
 
     }
 
